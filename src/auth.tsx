@@ -21,9 +21,9 @@ export type AuthContext = {
   isSessionLoaded: boolean;
   session: Session | null;
   isAuthenticated: boolean;
-  handleSignIn: (credentials: AuthCredentials) => Promise<void>;
-  handleSignInWithAzure: () => Promise<void>;
-  handleSignOut: () => Promise<void>;
+  signIn: (credentials: AuthCredentials) => Promise<void>;
+  signInWithAzure: () => Promise<void>;
+  signOut: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContext | null>(null);
@@ -48,14 +48,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const handleSignIn = async ({ email, password }: AuthCredentials) => {
+  const signIn = async ({ email, password }: AuthCredentials) => {
     await supabase.auth.signInWithPassword({
       email,
       password,
     });
   };
 
-  const handleSignInWithAzure = async () => {
+  const signInWithAzure = async () => {
     await supabase.auth.signInWithOAuth({
       provider: 'azure',
       options: {
@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const handleSignOut = async () => {
+  const signOut = async () => {
     await supabase.auth.signOut();
   };
 
@@ -75,9 +75,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         isSessionLoaded,
         session,
         isAuthenticated,
-        handleSignIn,
-        handleSignInWithAzure,
-        handleSignOut,
+        signIn,
+        signInWithAzure,
+        signOut,
       }}
     >
       {children}

@@ -13,14 +13,11 @@ export const Route = createFileRoute('/login')({
 });
 
 function Login() {
-  const { handleSignInWithAzure } = useAuth();
+  const { signInWithAzure } = useAuth();
 
   return (
     <div className="p-2">
-      <button
-        onClick={() => handleSignInWithAzure()}
-        className="text-white bg-blue-500 p-4"
-      >
+      <button onClick={signInWithAzure} className="text-white bg-blue-500 p-4">
         Sign in with Azure
       </button>
     </div>
