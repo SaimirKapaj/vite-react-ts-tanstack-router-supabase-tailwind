@@ -2,11 +2,11 @@ import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { type AuthContext } from '@/auth';
 
-interface MyRouterContext {
+type RouterContext = {
   auth: AuthContext;
-}
+};
 
-export const Route = createRootRouteWithContext<MyRouterContext>()({
+export const Route = createRootRouteWithContext<RouterContext>()({
   component: RootComponent,
 });
 
