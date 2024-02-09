@@ -4,7 +4,7 @@ export const Route = createFileRoute('/dashboard')({
   beforeLoad: ({ context }) => {
     if (!context.auth.isAuthenticated) {
       throw redirect({
-        to: '/',
+        to: '/login',
       });
     }
   },
@@ -14,7 +14,7 @@ export const Route = createFileRoute('/dashboard')({
 function Dashboard() {
   return (
     <div className="p-2">
-      <h1>Welcome Dashboard</h1>
+      <h1>Welcome to Dashboard</h1>
     </div>
   );
 }
