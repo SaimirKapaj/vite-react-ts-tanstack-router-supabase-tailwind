@@ -22,6 +22,14 @@ function RootComponent() {
       <main className="max-w-screen-md m-auto p-6 mt-12">
         <nav className="flex gap-6 border-b border-gray-400 pb-4">
           <Link
+            to="/"
+            activeProps={{
+              className: 'font-bold',
+            }}
+          >
+            Home
+          </Link>
+          <Link
             to="/about"
             activeProps={{
               className: 'font-bold',

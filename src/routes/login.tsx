@@ -17,7 +17,7 @@ function Login() {
 
   return (
     <div>
-      <h1>Login page</h1>
+      <h1>Login Page</h1>
       <button
         onClick={signInWithAzure}
         className="text-white bg-blue-500 p-2 mt-6"
