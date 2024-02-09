@@ -16,8 +16,12 @@ function Login() {
   const { signInWithAzure } = useAuth();
 
   return (
-    <div className="p-2">
-      <button onClick={signInWithAzure} className="text-white bg-blue-500 p-4">
+    <div>
+      <h1>Login page</h1>
+      <button
+        onClick={signInWithAzure}
+        className="text-white bg-blue-500 p-2 mt-6"
+      >
         Sign in with Azure
       </button>
     </div>

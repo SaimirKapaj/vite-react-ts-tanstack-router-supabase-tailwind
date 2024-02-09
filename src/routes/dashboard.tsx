@@ -18,13 +18,16 @@ function Dashboard() {
 
   const handleSignOut = () => {
     signOut();
-    navigate({ to: '/login' });
+    navigate({ to: '/' });
   };
 
   return (
-    <div className="p-2">
-      <h1>Welcome to Dashboard</h1>
-      <button onClick={handleSignOut} className="text-white bg-blue-500 p-4">
+    <div>
+      <h1>Dashboard page</h1>
+      <button
+        onClick={handleSignOut}
+        className="text-white bg-red-500 p-2 mt-6"
+      >
         Sign Out
       </button>
     </div>
